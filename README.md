@@ -4,7 +4,7 @@
 
 ---
 
-![Processly](https://github.com/masoudsadeghiDev/Processly/blob/front-end/src/assets/bpm.jpg)
+![Processly](https://github.com/masoudsadeghiDev/Processly/blob/main/front-end/src/assets/bpm.jpg)
 
 ## Project Overview
 **Processly** is a comprehensive and user-friendly **Business Process Management System (BPMS)** developed as a final project at University of Zanjan. This system enables organizations to design, manage, and optimize their business workflows efficiently. It incorporates an open-source Angular admin template in the frontend, providing a polished and responsive user interface for automating tasks, tracking progress, and analyzing performance metrics.
@@ -51,9 +51,6 @@
 - **Frontend**: Angular (with an open-source Angular admin template)
 - **Database**: Microsoft SQL Server
 - **Others**: Docker (for containerization)
-
-![Dashboard](docs/images/dashboard.png)
-*Screenshot: Real-time monitoring dashboard.*
 
 ## Acknowledgments
 - **Frontend Template**: This project uses an open-source Angular admin template to create a responsive and professional interface.
