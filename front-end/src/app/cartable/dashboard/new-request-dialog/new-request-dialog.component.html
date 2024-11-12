@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-body class="col-lg-12" style="width: 60vh">
+    <ng2-smart-table
+      class="order-table"
+      [settings]="settings"
+      [source]="tableSource"
+      (userRowSelect)="onSelectTask($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" hero (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

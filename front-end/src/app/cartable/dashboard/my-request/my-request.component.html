@@ -1,0 +1,19 @@
+<nb-card>
+  <nb-card-header
+    >لیست درخواست ها<br />
+    <small>در این قسمت در خواست های ارسالی خود را می توانید مشاهده کنید</small>
+  </nb-card-header>
+
+  <nb-card-body>
+    <button nbButton status="primary" hero (click)="onCreateRequest()">
+      درخواست جدید
+    </button>
+    <ng2-smart-table
+      class="order-table"
+      [settings]="settings"
+      [source]="tableSource"
+      (userRowSelect)="onSelectRequest($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,42 @@
+<nb-card>
+  <nb-card-body>
+    <nb-stepper #stepper>
+      <nb-step label="سازمان">
+        <nb-select
+          style="width: 50%"
+          fullWidth
+          placeholder="سازمان"
+          (selectedChange)="selectOrgan($event)"
+          required
+        >
+          <nb-option *ngFor="let organ of organizations" [value]="organ.id">{{
+            organ.name
+          }}</nb-option>
+        </nb-select>
+      </nb-step>
+      <nb-step label="انتخاب فیلتر">
+        <ngx-chip-list
+          title="پست سازمانی"
+          #positionChip
+          [data]="positions"
+        ></ngx-chip-list>
+
+        <ngx-chip-list title="گروه" #groupChip [data]="areas"></ngx-chip-list>
+
+        <ngx-chip-list
+          title="نقش"
+          #roleChip
+          [data]="businessRoles"
+        ></ngx-chip-list>
+
+        <ngx-chip-list
+          title="توانایی"
+          #skillChip
+          [data]="skills"
+        ></ngx-chip-list>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>
+<button nbButton status="success" (click)="submit()">ثبت</button>
+<button nbButton status="danger" hero (click)="goBack()">بازگشت</button>

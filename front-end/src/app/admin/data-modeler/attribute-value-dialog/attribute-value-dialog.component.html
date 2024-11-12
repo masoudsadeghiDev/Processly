@@ -1,0 +1,18 @@
+<nb-card>
+  <nb-card-header>مقادیر پارامتر</nb-card-header>
+  <nb-card-body>
+  
+    <ng2-smart-table
+      class="order-table"
+      [settings]="settings"
+      [source]="tableSource"
+      (deleteConfirm)="onDeleteConfirm($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <button nbButton hero status="success" (click)="submit()">ثبت</button>
+    <button nbButton hero status="danger" (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

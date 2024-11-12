@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>طراحی مدل داده</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <form class="col-lg-12" [formGroup]="model">
+        <input
+          type="text"
+          nbInput
+          fieldSize="medium"
+          placeholder="نام مدل"
+          formControlName="name"
+        />
+        <nb-select *ngIf="haveMainModel" placeholder="نوع مدل" formControlName="entityType">
+          <nb-option value="MASTER">Master</nb-option>
+          <nb-option value="PARAMETER">Parameter</nb-option>
+        </nb-select>
+
+        <textarea
+          rows="5"
+          nbInput
+          fullWidth
+          formControlName="description"
+          placeholder="توضیحات"
+        ></textarea>
+      </form>
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <button nbButton hero status="success" (click)="submit()">ثبت</button>
+    <button nbButton hero status="danger" (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

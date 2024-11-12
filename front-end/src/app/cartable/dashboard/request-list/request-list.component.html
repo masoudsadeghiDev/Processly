@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header
+      >لیست درخواست ها<br />
+      <small>در این قسمت در خواست های که شما مسئول رسیدگی آنها هستید را مشاهده می کنید</small>
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table
+        class="order-table"
+        [settings]="settings"
+        [source]="tableSource"
+        (userRowSelect)="onSelectRequest($event)"
+      >
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

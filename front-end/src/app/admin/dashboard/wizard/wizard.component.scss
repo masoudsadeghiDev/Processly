@@ -1,0 +1,138 @@
+.wizardContainer {
+  position: relative;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: block;
+  background: white;
+  width: 100%;
+  height: 37rem;
+}
+
+.wizardCarousel {
+  align-self: center;
+  /* width: 90%; */
+  perspective: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.wizardCarousel h1 {
+  padding-left: 63%;
+}
+
+.wizardCarousel > * {
+  flex: 0 0 auto;
+}
+
+.wizardCarousel figure {
+  margin: 0;
+  width: 200px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: 50% 50% -482.8427124746px;
+}
+
+.wizardCarousel figure img {
+  width: 100%;
+  height: 200px;
+
+  box-sizing: border-box;
+  padding: 0 0px;
+  background-image: linear-gradient(to bottom right, #3366ff, #4270fa);
+}
+
+.wizardCarousel figure img:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50% -482.8427124746px;
+}
+
+.wizardCarousel figure img:nth-child(2) {
+  transform: rotateY(1rad);
+}
+
+.wizardCarousel figure img:nth-child(3) {
+  transform: rotateY(2.1007963268rad);
+}
+
+.wizardCarousel figure img:nth-child(4) {
+  transform: rotateY(3.1361944902rad);
+}
+
+.wizardCarousel figure img:nth-child(5) {
+  transform: rotateY(4.1705926536rad);
+}
+
+.wizardCarousel figure img:nth-child(6) {
+  transform: rotateY(5.2rad);
+}
+
+.wizardControle {
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  align-self: center;
+  margin-top: 2rem;
+  height: 20rem;
+}
+
+nb-icon {
+  font-size: 1.5rem !important;
+  line-height: 2;
+  width: 2em;
+  height: 2em;
+}
+
+.image_margin_tow {
+  margin-top: -4em;
+}
+
+.image_margin_three {
+  margin-top: -2rem;
+}
+
+.image_margin_four {
+  margin-top: -1rem;
+}
+
+nb-select {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+
+}
+
+.title {
+  margin-bottom: 1rem;
+  align-self: center;
+}
+
+.controle-rigth-section {
+  padding: 1rem;
+  width: 50%;
+  flex-direction: column;
+}
+
+.controle-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.controle-desc{
+  font-size: .75rem;
+}
+
+.controle-left-section {
+  width: 50%;
+  margin-top: 0.5rem;
+}
+
+.detail{
+  
+}

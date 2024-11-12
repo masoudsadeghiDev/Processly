@@ -1,0 +1,18 @@
+<nb-card>
+    <nb-card-header
+      >لیست سازمان ها<br />
+      <small>در این قسمت می توانید سازمان های خود را تعریف کنید</small>
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table
+        class="order-table"
+        [settings]="settings"
+        [source]="tableSource"
+        (userRowSelect)="onSelectOrgan($event)"
+        (createConfirm)="onCreateOrganization($event)"
+      >
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

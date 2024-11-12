@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>وارد کردن فایل فرایند</nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="form">
+      <input
+        nbInput
+        fullWidth
+        type="text"
+        placeholder="نام فرایند را وارد کنید"
+        formControlName="name"
+      />
+      <input
+        nbInput
+        fullWidth
+        type="file"
+        accept=".bpmn"
+        (change)="handleFileInput($event.target.files)"
+      />
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button
+      nbButton
+      hero
+      status="success"
+      (click)="submit()"
+      [disabled]="xml == '' || xml == null"
+    >
+      ثبت
+    </button>
+    <button nbButton hero status="danger" (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,28 @@
+<div class="col-sm-6">
+  <div class="form-group">
+    <div class="inline">
+      <input
+        nbInput
+        [matDatepicker]="picker"
+        autocomplete="off"
+        [formControl]="formControl"
+        theme="dp-material"
+        [placeholder]="to?.label"
+        [formlyAttributes]="field"
+        (click)="picker.open()"
+        (dateChange)="dateChange($event)"
+        [max]="maxDate"
+        [min]="minDate"
+      />
+      <!-- <ng-container *ngIf="(formControl.value || formControl.value === 0) &&
+      !formControl.disabled">
+      <mat-icon class="icon" (click)="resetToDefault()">close</mat-icon>
+    </ng-container> -->
+      <div class="date" style="position: relative">
+        <mat-datepicker-toggle matPrefix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+  </div>
+</div>

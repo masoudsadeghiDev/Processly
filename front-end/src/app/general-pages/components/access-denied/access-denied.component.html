@@ -1,0 +1,40 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <div class="header-container">
+      <nb-actions size="medium">
+        <nb-action icon="arrow-back-outline" (click)="goToHome()"></nb-action>
+      </nb-actions>
+      <div class="logo-container">
+        <a class="logo" href="#">سیستم مدیریت فرآیندهای کسب وکار ( BPMS ) </a>
+      </div>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <div class="row">
+      <div class="col-md-12">
+        <nb-card>
+          <nb-card-body>
+            <div class="flex-centered col-xl-4 col-lg-6 col-md-8 col-sm-12">
+              <h2 class="title">403 با عرض پوزش</h2>
+              <small class="sub-title"
+                >شما دسترسی مشاهده این صفحه را ندارید</small
+              >
+              <button
+                nbButton
+                fullWidth
+                (click)="goToHome()"
+                type="button"
+                class="home-button"
+              >
+                بازگشت
+              </button>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <ngx-footer></ngx-footer>
+  </nb-layout-footer>
+</nb-layout>

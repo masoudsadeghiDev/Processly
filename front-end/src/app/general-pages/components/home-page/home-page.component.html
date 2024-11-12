@@ -1,0 +1,56 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <div class="header-container">
+      <nb-actions size="medium">
+        <nb-action icon="info-outline" (click)="goToAbout()"></nb-action>
+        <nb-action icon="log-in-outline" (click)="goToAuth()"></nb-action>
+      </nb-actions>
+      <div class="logo-container">
+        <a class="logo" href="#">سیستم مدیریت فرآیندهای کسب وکار ( BPMS ) </a>
+      </div>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column
+    style="
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    "
+  >
+    <div class="banner">
+      <div class="introduction">
+        <h1>فرآیند های خود را اوتوماتیک انجام دهید</h1>
+        <h3>با سیستم مدیریت فرآیند EOMS</h3>
+        <h3></h3>
+      </div>
+    </div>
+    <div class="discription">
+      <p style="font-size: larger; line-height: 1.6">
+        با اهمیت مدیریت فرآیندهای سازمانی در چند دهه اخیر و رشد روز افزون علم
+        BPM واحدهای توسعه و تعالی سازمان در سازمان‌ها ساختاریافته‌تر شدند و
+        بهبود زنجیره ارزش سازمان و در نتیجه فرآیندهای سازمانی را سرلوحه خود قرار
+        دادند. مستندات فرآیندی شکل گرفتند و معیارهای ارزیابی برای سنجش فرآیندها
+        تعریف شدند. با افزایش روند تحلیل فرآیندهای مختلف ارتباطات مابین
+        فرآیندها، ارتباطات فرآیندها با سیستم‌های تخصصی مختلف و درگیر بودن افراد
+        مختلف با فرآیندها بر پیچیدگی تحلیل فرآیندها و ارزیابی آن‌ها اضافه کرد.
+        همین امر موجب گردید تا سیستم‌های مدیریت فرآیندهای کسب‌ وکار (BPMS) شکل
+        بگیرند.
+      </p>
+    </div>
+    <div class="bpmn-pic"></div>
+
+    <div class="row" style="margin-top: 2rem">
+      <ngx-description-item
+        class="col-lg-3"
+        *ngFor="let item of benefits"
+        [title]="item.title"
+        [text]="item.text"
+      ></ngx-description-item>
+    </div>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <ngx-footer></ngx-footer>
+  </nb-layout-footer>
+</nb-layout>

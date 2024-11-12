@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>
+      لیست فرایند‌ها <br />
+      <small>پرسنل مجری هر قسمت از فرایند را مشخص کنید</small></nb-card-header
+    >
+    <nb-card-body>
+      <ng2-smart-table
+        class="order-table"
+        [settings]="settings"
+        [source]="tableSource"
+        (custom)="onDesign($event)"
+        (userRowSelect)="onDesign($event)"
+      >
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

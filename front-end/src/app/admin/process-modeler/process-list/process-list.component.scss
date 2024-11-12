@@ -1,0 +1,73 @@
+button[nbTreeGridRowToggle] {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.search-label {
+  display: block;
+}
+.search-input {
+  margin-bottom: 1rem;
+}
+
+.nb-column-name {
+  width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+  .nb-column-name,
+  .nb-column-size {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .nb-column-name,
+  .nb-column-size,
+  .nb-column-kind {
+    width: 33.333%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .nb-column-name {
+    width: 31%;
+  }
+  .nb-column-size,
+  .nb-column-kind,
+  .nb-column-items {
+    width: 23%;
+  }
+}
+
+
+// ::ng-deep .nb-edit, ::ng-deep .nb-trash, ::ng-deep .nb-gear{
+//   position: absolute;
+//   right: 0.5rem;
+//   top: 0.5rem;
+// }
+
+// ::ng-deep .nb-gear{
+//   right: 2rem;
+// }
+
+// ::ng-deep .nb-trash{
+//   right: 3.5rem;
+// }
+
+
+// :host /deep/ ng2-st-tbody-edit-delete {display: flex !important;
+//   height: 0 !important;
+// }
+
+// :host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+//   display: inline-block;
+//   width: 50px;
+//   text-align: center;
+//   font-size: 1.1em;
+// }
+
+// :host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom:hover {
+//   color: #5dcfe3;
+// }

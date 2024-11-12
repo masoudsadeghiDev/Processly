@@ -1,0 +1,100 @@
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~@nebular/theme/styles/global/breakpoints";
+@import "../../../@theme/styles/themes.scss";
+
+@include nb-install-component() {
+  ngx-chartjs-pie,
+  ngx-chartjs-bar,
+  ngx-chartjs-line,
+  ngx-chartjs-multiple-xaxis,
+  ngx-chartjs-bar-horizontal,
+  ngx-chartjs-radar {
+    display: block;
+    height: nb-theme(card-height-medium);
+    width: 100%;
+
+    ::ng-deep chart {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+
+@include nb-install-component() {
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+  }
+
+  .logo {
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
+    @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
+    white-space: nowrap;
+    text-decoration: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .control-item {
+    display: none;
+  }
+  .user-action {
+    border: none;
+    padding: 0;
+  }
+}
+
+@include media-breakpoint-down(is) {
+  nb-select {
+    display: none;
+  }
+}
+
+.text {
+  align-self: center;
+  justify-content: center;
+  padding: 5rem;
+  text-align: right;
+}
+
+.introduction {
+  margin-top: 5rem;
+  margin-right: 5rem;
+}
+
+.home-row {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.home-col {
+  flex: 1;
+}
+
+.banner {
+  width: 100%;
+  height: 50rem;
+  background-image: url("../../../../assets/images/banner.png");
+}
+
+.discription {
+  height: 15rem;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  padding: 10rem 20rem;
+  font-size: medium;
+}
+
+.bpmn-pic {
+  width: 100%;
+  height: 30rem;
+  background-image: url("../../../../assets/images/Bpm.jpg");
+  background-position: center; /* Center the image */
+  background-size: contain;
+}

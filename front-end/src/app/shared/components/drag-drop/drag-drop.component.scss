@@ -1,0 +1,21 @@
+.item-container {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+}
+formly-field {
+  width: 70%;
+  border-width: 1;
+  border-color: red;
+}
+button {
+  height: 50%;
+}
+
+edit-icon {
+}
+.delete-icon {
+  color: red;
+}

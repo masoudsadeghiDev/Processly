@@ -1,0 +1,8 @@
+<div class="editor-container" fxLayout="column">
+  <ngx-monaco-editor
+    [options]="editorOptions"
+    [(ngModel)]="code"
+  ></ngx-monaco-editor>
+</div>
+<button nbButton status="success" hero (click)="submit()">ذخیره</button>
+<button nbButton status="danger" hero (click)="goBack()">بازگشت</button>

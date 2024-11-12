@@ -1,0 +1,46 @@
+@import '../../../../../node_modules/@syncfusion/ej2-angular-diagrams/styles/material.css';
+
+.container{
+    width: 100%;
+    height: 100%;
+    direction: ltr;
+    display: flex;
+    flex-direction: row;
+    
+}  
+
+.ejs-container{
+    flex: 3;
+
+}
+
+.e-node{
+    border-radius: 10;
+}
+
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .buttons-row {
+    margin: -0.5rem;
+  }
+
+
+  .action-icon {
+    @include nb-ltr(margin-right, 0.5rem);
+    @include nb-rtl(margin-left, 0.5rem);
+  }
+
+  .actions-card {
+    height: 8rem;
+  }
+}
+
+
+.button {
+  margin: 1rem 0.5rem;
+}
+
+.list-card{
+  flex: 1;
+}

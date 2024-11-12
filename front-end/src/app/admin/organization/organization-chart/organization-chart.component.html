@@ -1,0 +1,33 @@
+<div class="container">
+  <nb-card class="list-card">
+    <nb-card-header>لیست پست سازمانی</nb-card-header>
+    <nb-card-body>
+      <nb-list
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="menu"
+      >
+        <nb-list-item cdkDrag *ngFor="let post of menu">
+          {{ post.displayName }}
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+  </nb-card>
+  <div class="ejs-container" cdkDropList>
+    <ejs-diagram
+      #diagram
+      id="diagram"
+      width="100%"
+      height="580px"
+      [getNodeDefaults]="getNodeDefaults"
+      [getConnectorDefaults]="getConnectorDefaults"
+      [snapSettings]="snapSettings"
+      [layout]="layout"
+      [dataSourceSettings]="dataSourceSettings"
+      (click)="onSelectNode($event)"
+    ></ejs-diagram>
+  </div>
+</div>
+<button nbButton status="danger" hero (click)="goBack()" class="button">
+  بازگشت
+</button>

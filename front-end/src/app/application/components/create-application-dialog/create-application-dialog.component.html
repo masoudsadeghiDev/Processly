@@ -1,0 +1,54 @@
+<nb-card>
+  <nb-card-header>ثبت برنامه جدید </nb-card-header>
+  <nb-card-body>
+    <image-cropper
+      *ngIf="imageChangedEvent; else empty"
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 4"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded($event)"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      style="width: 40vh"
+      roundCropper="true"
+    ></image-cropper>
+    <ng-template #empty>
+      <div class="avatar empty-avatar">
+        <mat-icon color="#000000">add</mat-icon>
+      </div>
+    </ng-template>
+    <form [formGroup]="form" enctype="multipart/form-data">
+      <input
+        fullWidth
+        nbInput
+        type="text"
+        placeholder="نام برنامه را وارد کنید"
+        required
+        formControlName="name"
+      />
+      <input
+        fullWidth
+        nbInput
+        type="file"
+        required
+        formControlName="image"
+        #fileInput
+        (change)="handleFileInput($event)"
+      />
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button
+      nbButton
+      hero
+      status="success"
+      (click)="submit()"
+      [disabled]="form.invalid"
+    >
+      ثبت
+    </button>
+    <button nbButton hero status="danger" (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

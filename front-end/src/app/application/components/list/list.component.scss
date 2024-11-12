@@ -1,0 +1,38 @@
+.swiper-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container {
+  height: 80vh;
+  direction: ltr;
+}
+
+mat-grid-tile {
+}
+
+.avatar {
+  height: 15vh;
+  width: 15vh;
+  border-radius: 7.5vh;
+}
+
+::ng-deep .mat-figure {
+  // display: flex;
+  flex-direction: column;
+  // margin-top:3vh
+}
+
+.title {
+  margin-top: 2vh;
+  text-align: center;
+}
+
+// ::ng-deep .nb-theme-default nb-sidebar{
+//   display: none !important;
+// }
+
+

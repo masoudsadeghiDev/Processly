@@ -1,0 +1,50 @@
+<nb-card>
+  <nb-card-header
+    >اطلاعات سازمان<br />
+    <small>در این قسمت می توانید اطلاعات پایه سازمان خود را ثبت کنید </small>
+  </nb-card-header>
+
+  <nb-card-body>
+    <button nbButton status="primary" hero (click)="showChart()">
+      مشاهده چارت سازمانی
+    </button>
+    <nb-tabset fullWidth (changeTab)="changeTab($event)">
+      <nb-tab tabTitle="پست سازمانی">
+        <ng2-smart-table
+          class="order-table"
+          [settings]="settings"
+          [source]="tableSource"
+          (createConfirm)="onCreateSubItem($event)"
+        >
+        </ng2-smart-table>
+      </nb-tab>
+      <nb-tab tabTitle="گروه">
+        <ng2-smart-table
+          class="order-table"
+          [settings]="settings"
+          [source]="tableSource"
+          (createConfirm)="onCreateSubItem($event)"
+        >
+        </ng2-smart-table>
+      </nb-tab>
+      <nb-tab tabTitle="نقش">
+        <ng2-smart-table
+          class="order-table"
+          [settings]="settings"
+          [source]="tableSource"
+          (createConfirm)="onCreateSubItem($event)"
+        >
+        </ng2-smart-table>
+      </nb-tab>
+      <nb-tab tabTitle="توانایی">
+        <ng2-smart-table
+          class="order-table"
+          [settings]="settings"
+          [source]="tableSource"
+          (createConfirm)="onCreateSubItem($event)"
+        >
+        </ng2-smart-table>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

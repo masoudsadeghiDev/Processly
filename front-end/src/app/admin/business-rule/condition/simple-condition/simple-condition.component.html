@@ -1,0 +1,69 @@
+<div class="row">
+  <div
+    id="form"
+    class="col-lg-9 form"
+    cdkDropList
+    (cdkDropListDropped)="dropOnForm($event)"
+  >
+    <nb-card style="height: 100%">
+      <nb-card-header>قوانین</nb-card-header>
+      <nb-card-body style="display: flex; flex-direction: row">
+        <form class="form" style="width: 100%" [formGroup]="form">
+          <formly-form
+            [form]="form"
+            [fields]="fields"
+            [model]="model"
+          ></formly-form>
+        </form>
+        <img
+          src="../../../../assets/images/braket.png"
+          style="height: 410px; width: 50px; align-self: flex-edn"
+        />
+        <div class="operator" (click)="changeOperator()">
+          <h4>
+            {{ operator == "&&" ? "And" : "Or" }}
+          </h4>
+          <nb-icon icon="refresh-outline"></nb-icon>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <nb-card class="col-lg-3 pallet example-list">
+    <div
+      id="pallet"
+      cdkDropListConnectedTo="form"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="data"
+      style="overflow: scroll"
+    >
+      <table [nbTreeGrid]="paletDataSource">
+        <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+        <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+        <ng-container [nbTreeGridColumnDef]="column">
+          <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef></th>
+          <td nbTreeGridCell *nbTreeGridCellDef="let row">
+            <div *ngIf="row.data.kind == 'model'; else attr">
+              <nb-icon icon="chevron-down"></nb-icon>
+              {{ row.data[column] }}
+            </div>
+            <ng-template #attr>
+              <ngx-drag [title]="row.data[column]" [data]="row.data">
+              </ngx-drag>
+            </ng-template>
+          </td>
+        </ng-container>
+      </table>
+    </div>
+  </nb-card>
+</div>
+<button
+  nbButton
+  status="success"
+  hero
+  [disabled]="fields.length == 0"
+  (click)="submit()"
+>
+  ذخیره
+</button>
+<button nbButton status="danger" hero (click)="goBack()">بازگشت</button>

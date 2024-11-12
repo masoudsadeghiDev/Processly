@@ -1,0 +1,104 @@
+<nb-card>
+  <nb-card-header>پارامتر های مدل</nb-card-header>
+  <nb-card-body>
+    <form class="col-lg-12" [formGroup]="form">
+      <div class="row">
+        <div class="col-lg-6">
+          <input
+            id="name"
+            type="text"
+            nbInput
+            fullWidth
+            fieldSize="medium"
+            placeholder="نام "
+            formControlName="name"
+            required="true"
+            [status]="invalidName ? 'danger' : ''"
+            (ngModelChange)="changeName($event)"
+          />
+          <div *ngIf="invalidName" style="font-size: x-small;color: red;">نام نمی تواند برابر request باشد</div>
+          <nb-select
+            placeholder="نوع آرگومان"
+            fieldSize="medium"
+            fullWidth
+            formControlName="type"
+            selected="PRIMITIVE"
+            required="true"
+          >
+            <nb-option value="PRIMITIVE">primitive data type</nb-option>
+            <nb-option value="ONE_TO_ONE">relation</nb-option>
+            <!-- <nb-option value="ONE_TO_MANY">one to many relation</nb-option>
+            <nb-option value="MANY_TO_MANY">many to many relation</nb-option>-->
+            <nb-option value="MANY_TO_ONE">many to one relation</nb-option>
+          </nb-select>
+
+          <textarea
+            rows="2"
+            nbInput
+            fullWidth
+            formControlName="description"
+            placeholder="توضیحات"
+          ></textarea>
+        </div>
+        <div class="col-lg-6">
+          <input
+            type="text"
+            nbInput
+            fullWidth
+            fieldSize="medium"
+            placeholder="نام نمایشی"
+            formControlName="displayName"
+          />
+
+          <nb-select
+            placeholder="نوع داده"
+            fieldSize="medium"
+            fullWidth
+            formControlName="primitiveType"
+            *ngIf="form.value.type == 'PRIMITIVE'"
+          >
+            <nb-option value="string">string</nb-option>
+            <nb-option value="character">character</nb-option>
+            <nb-option value="integer">integer</nb-option>
+            <nb-option value="long">long</nb-option>
+            <nb-option value="double">double</nb-option>
+            <nb-option value="short">short</nb-option>
+            <nb-option value="float">float</nb-option>
+            <nb-option value="boolean">boolean</nb-option>
+          </nb-select>
+          <nb-select
+            placeholder="مدل مرتبط"
+            formControlName="className"
+            fieldSize="medium"
+            fullWidth
+            *ngIf="form.value.type != 'PRIMITIVE'"
+          >
+            <nb-option *ngFor="let cls of classNames" [value]="cls">{{
+              cls
+            }}</nb-option>
+          </nb-select>
+        </div>
+      </div>
+      <button
+        nbButton
+        hero
+        status="success"
+        (click)="add()"
+        [disabled]="form.invalid || invalidName"
+      >
+        افزودن
+      </button>
+    </form>
+
+    <ng2-smart-table
+      class="order-table col-lg-12"
+      [settings]="settings"
+      [source]="tableSource"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton hero status="success" (click)="submit()">ثبت</button>
+    <button nbButton hero status="danger" (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

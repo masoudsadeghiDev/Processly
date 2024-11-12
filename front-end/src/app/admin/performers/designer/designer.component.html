@@ -1,0 +1,14 @@
+<div class="processModelerContainer">
+  <div
+    [ngStyle]="{ height: fullscreen ? '750px' : '500px' }"
+    class="processModeler"
+  >
+    <div #ref class="diagram-container" id="canvas"></div>
+  </div>
+</div>
+<button nbButton status="success" (click)="toggleFullScreen()">
+  <nb-icon
+    [icon]="!fullscreen ? 'expand-outline' : 'collapse-outline'"
+  ></nb-icon>
+</button>
+<button nbButton status="danger" hero (click)="goBack()">بازگشت</button>

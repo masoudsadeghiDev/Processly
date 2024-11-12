@@ -1,0 +1,62 @@
+.mat-input-element {
+  height: 42px;
+  padding-top: 21px;
+  position: relative;
+  top: -18px;
+}
+
+.mat-select {
+  height: 100%;
+  padding-top: 10px;
+  ::ng-deep .mat-select-trigger {
+    line-height: 3.5rem;
+  }
+}
+
+
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  position: relative;
+  width: 500px;
+}
+
+mat-datepicker-toggle {
+  margin-top: 6px;
+  align-self: flex-start;
+}
+
+::ng-deep .mat-datepicker-content .mat-calendar,::ng-deep .mat-button-base {
+  font-family: IRANSans !important;
+}
+
+::ng-deep .date .nb-theme-default .size-medium:not(.input-full-width){
+    width: 100% !important;
+}
+
+::ng-deep .date .mat-button-base {
+  position: absolute;
+  left: 17rem;
+  top: -1.2rem;
+}
+
+.icon {
+  color: rgb(255, 255, 255) !important;
+  cursor: pointer;
+  position: absolute;
+  left: 4rem;
+  top: 17px;
+  text-align: right;
+  border-radius: 100%;
+  background-color: rgb(161, 161, 161);
+  min-height: 0%;
+  min-width: 0%;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+  &:hover {
+    background-color: rgb(97, 96, 96);
+  }
+}

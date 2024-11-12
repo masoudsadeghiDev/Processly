@@ -1,0 +1,16 @@
+<nb-card style="height: 80%">
+  <nb-card-header> فرم : {{ name }}</nb-card-header>
+  <nb-card-body id="newreq">
+    <form [formGroup]="form">
+      <formly-form
+        [form]="form"
+        [fields]="fields"
+        [model]="model"
+      ></formly-form>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="success" hero (click)="onSubmit()">ثبت</button>
+    <button nbButton status="danger" hero (click)="goBack()">انصراف</button>
+  </nb-card-footer>
+</nb-card>

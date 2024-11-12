@@ -1,0 +1,9 @@
+<nb-radio-group
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [(value)]="value"
+>
+  <nb-radio *ngFor="let option of groupOptions" [value]="option.value">
+    {{ option.title }}
+  </nb-radio>
+</nb-radio-group>

@@ -1,0 +1,18 @@
+button{
+    margin-bottom: 1rem;
+}
+
+::ng-deep .nb-theme-default #newreq [nbInput].input-full-width {
+    width: 45% !important;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    margin: 1rem;
+  }
+  
+  ::ng-deep .nb-theme-default #newreq .select-button {
+    width: 45% !important;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    margin: 1rem;
+  }
+  

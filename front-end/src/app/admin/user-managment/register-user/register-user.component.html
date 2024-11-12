@@ -1,0 +1,145 @@
+<nb-card>
+  <nb-card-body>
+    <div class="col-lg-12">
+      <img *ngIf="image; else empty" class="avatar" [src]="image" />
+      <ng-template #empty>
+        <div class="avatar empty-avatar" type="file">
+          <mat-icon color="#000000">add</mat-icon>
+        </div>
+      </ng-template>
+      <input type="file" (change)="fileChangeEvent($event)" />
+    </div>
+
+    <form style="width: 100%" class="col-lg-12" [formGroup]="form">
+      <input
+        class="col-lg-12"
+        type="text"
+        nbInput
+        placeholder="نام کاربری"
+        formControlName="username"
+        required
+        [status]="form.value.username ? '' : 'danger'"
+      />
+
+      <input
+        class="col-lg-12"
+        type="text"
+        nbInput
+        placeholder="رمز"
+        formControlName="password"
+        required
+        type="password"
+        [status]="form.value.password ? '' : 'danger'"
+      />
+      <input
+        class="col-lg-12"
+        type="text"
+        nbInput
+        placeholder="نام"
+        formControlName="name"
+        required
+        [status]="form.value.name ? '' : 'danger'"
+      />
+      <input
+        class="col-lg-12"
+        type="text"
+        nbInput
+        placeholder="نام خانوادگی"
+        formControlName="family"
+        required
+        [status]="form.value.family ? '' : 'danger'"
+      />
+      <nb-select
+        placeholder="نوع کاربری"
+        class="col-lg-12"
+        required
+        formControlName="role"
+        [status]="form.value.role ? 'primary' : 'danger'"
+      >
+        <nb-option value="ADMIN">ادمین کل</nb-option>
+        <nb-option value="WORKER">کاربر سیستم</nb-option>
+        <nb-option value="EMPLOYEE">کارمند</nb-option>
+        <nb-option value="TECHNICAL_ADMIN">ادمین سیستم</nb-option>
+      </nb-select>
+      <input
+        class="col-lg-12"
+        type="text"
+        nbInput
+        placeholder="ایمیل"
+        formControlName="email"
+        [status]="isValidEmail ? '' : 'danger'"
+        (ngModelChange)="validateEmail($event)"
+      />
+
+      <nb-select
+        placeholder="سازمان"
+        class="col-lg-12"
+        (selectedChange)="selectOrgan($event)"
+        required
+        formControlName="organization"
+        [status]="form.value.organization ? 'primary' : 'danger'"
+      >
+        <nb-option *ngFor="let organ of organizations" [value]="organ.id">{{
+          organ.name
+        }}</nb-option>
+      </nb-select>
+
+      <nb-select
+        formControlName="position"
+        placeholder="پست سازمانی"
+        class="col-lg-12"
+        required
+        [status]="form.value.position ? 'primary' : 'danger'"
+        [disabled]="!form.value.organization"
+      >
+        <nb-option *ngFor="let position of positions" [value]="position.id">{{
+          position.name
+        }}</nb-option>
+      </nb-select>
+      <nb-select
+        formControlName="area"
+        placeholder="گروه"
+        class="col-lg-12"
+        [status]="form.value.area ? 'primary' : 'danger'"
+        [disabled]="!form.value.organization"
+      >
+        <nb-option *ngFor="let area of areas" [value]="area.id">{{
+          area.name
+        }}</nb-option>
+      </nb-select>
+      <nb-select
+        formControlName="skills"
+        multiple="true"
+        placeholder="توانایی ها"
+        class="col-lg-12"
+      >
+        <nb-option *ngFor="let skill of skills" [value]="skill.id">{{
+          skill.name
+        }}</nb-option>
+      </nb-select>
+      <nb-select
+        formControlName="businessRole"
+        placeholder="نقش"
+        class="col-lg-12"
+        [status]="form.value.businessRole ? 'primary' : 'danger'"
+        [disabled]="!form.value.organization"
+      >
+        <nb-option *ngFor="let role of businessRoles" [value]="role.id">{{
+          role.name
+        }}</nb-option>
+      </nb-select>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button
+      nbButton
+      status="success"
+      hero
+      (click)="submit()"
+      [disabled]="form.invalid || image == null || !isValidEmail"
+    >
+      ثبت
+    </button>
+    <button nbButton status="danger" hero (click)="goBack()">بازگشت</button>
+  </nb-card-footer>
+</nb-card>

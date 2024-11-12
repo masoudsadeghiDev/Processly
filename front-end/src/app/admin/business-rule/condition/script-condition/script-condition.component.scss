@@ -1,0 +1,37 @@
+.editor-container {
+  height: 300px;
+  margin: 20px;
+}
+
+@import "../../../../@theme/styles/themes";
+
+@include nb-install-component() {
+  .buttons-row {
+    margin: -0.5rem;
+  }
+
+  button[nbButton] {
+    margin: 1rem;
+  }
+
+  .action-icon {
+    @include nb-ltr(margin-right, 0.5rem);
+    @include nb-rtl(margin-left, 0.5rem);
+  }
+
+  .actions-card {
+    height: 8rem;
+  }
+
+  nb-tab {
+    padding: 0;
+  }
+}
+
+ngx-monaco-editor {
+  width: 100%;
+  height: 300px;
+  display: block;
+  direction: ltr !important;
+  text-align: left; 
+}

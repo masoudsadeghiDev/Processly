@@ -1,0 +1,34 @@
+<form [formGroup]="itemForm">
+  <div class="container">
+    <input
+      formControlName="value"
+      *ngIf="isPrimitive; else select"
+      class="item"
+      nbInput
+      fullWidth
+    />
+    <ng-template #select>
+      <nb-select
+        formControlName="value"
+        class="item"
+        placeholder="انتخاب کنید"
+        fullWidth
+      >
+        <nb-option *ngFor="let opt of data.options" [value]="opt.value">{{
+          opt.title
+        }}</nb-option>
+      </nb-select>
+    </ng-template>
+    <nb-select
+      class="item"
+      placeholder="عملگر"
+      fullWidth
+      formControlName="operation"
+    >
+      <nb-option *ngFor="let opt of selectOptions" [value]="opt.value"
+        >{{ opt.title }} ( {{ opt.value }} )</nb-option
+      >
+    </nb-select>
+    <input class="item" nbInput fullWidth [value]="data.name" disabled />
+  </div>
+</form>

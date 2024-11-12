@@ -1,0 +1,23 @@
+<nb-card>
+  <nb-card-header
+    ><img *ngIf="info" class="avatar" [src]="info.profile" />
+    <nb-radio-group [(value)]="enable">
+      <nb-radio [value]="1"> فعال </nb-radio>
+      <nb-radio [value]="0"> غیر فعال </nb-radio>
+    </nb-radio-group>
+  </nb-card-header>
+  <nb-card-body class="col-lg-12" style="width: 60vh">
+    <div class="col-lg-6">نام : {{ info?.name }}</div>
+    <div class="col-lg-6">نام خانوادگی : {{ info?.family }}</div>
+    <div class="col-lg-6">نام کاربری : {{ info?.username }}</div>
+    <div class="col-lg-6">ایمیل : {{ info?.email }}</div>
+    <div class="col-lg-6">سازمان : {{ info?.organization }}</div>
+    <div class="col-lg-6">گروه : {{ info?.area }}</div>
+    <div class="col-lg-6">پست سازمانی : {{ info?.position }}</div>
+    <div class="col-lg-6">نقش در سازمان : {{ info?.businessRole }}</div>
+    <div class="col-lg-6">توانایی : {{ info?.skills }}</div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" hero (click)="dismiss()">بازگشت</button>
+  </nb-card-footer>
+</nb-card>

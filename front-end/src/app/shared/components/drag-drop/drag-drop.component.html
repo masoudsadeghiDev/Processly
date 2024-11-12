@@ -1,0 +1,9 @@
+<div
+  class="formly-drag-drop"
+  (cdkDropListDropped)="this.to.droup($event)"
+  cdkDropList
+>
+  <div cdkDrag class="item-container" *ngFor="let field of field.fieldGroup">
+    <formly-field [field]="field"></formly-field>
+  </div>
+</div>

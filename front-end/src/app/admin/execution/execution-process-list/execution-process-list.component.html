@@ -1,0 +1,28 @@
+<nb-tabset #tabset fullWidth (changeTab)="onGetData()">
+  <nb-tab #running tabTitle="فرایند های در حال اجرا">
+    <nb-card>
+      <nb-card-body>
+        <ng2-smart-table
+          class="order-table"
+          [settings]="executionSettings"
+          [source]="executionTableSource"
+          (custom)="onStop($event)"
+        >
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+  </nb-tab>
+  <nb-tab #stop tabTitle="فرایند های متوقف شده">
+    <nb-card>
+      <nb-card-body>
+        <ng2-smart-table
+          class="order-table"
+          [settings]="stopSettings"
+          [source]="stopTableSource"
+          (custom)="onExecute($event)"
+        >
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+  </nb-tab>
+</nb-tabset>

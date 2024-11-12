@@ -1,0 +1,19 @@
+<div class="container">
+  <swiper style="height: 100%" [config]="config">
+    <div *ngIf="slides.length > 0">
+      <div *ngFor="let slide of slides">
+        <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+          <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile
+              *ngFor="let app of slide"
+              style="border: 1; border-color: red"
+              slide
+            >
+              <ngx-app [app]="app"></ngx-app>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+    </div>
+  </swiper>
+</div>

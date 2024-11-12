@@ -1,0 +1,22 @@
+.avatar {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 5vh;
+}
+.empty-avatar {
+  border: 1px;
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nb-card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button {
+  margin: 1rem 0.5rem;
+}

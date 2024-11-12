@@ -1,0 +1,147 @@
+<!-- <div class="wizardContainer"> -->
+<nb-card class="wizardContainer">
+  <nb-select
+    status="primary"
+    [selected]="processService.currentProcess?.id"
+    (selectedChange)="selectProcess($event)"
+    placeholder="لیست فرایند‌ها"
+  >
+    <nb-option *ngFor="let prc of process" [value]="prc.id">{{
+      prc.displayName
+    }}</nb-option>
+  </nb-select>
+  <div #wizardCarousel class="wizardCarousel">
+    <h3 class="title">{{ processService.currentProcess?.displayName }}</h3>
+    <figure appHomePage>
+      <img
+        id="1"
+        src="../../../../assets/images/wizard/Process.png"
+        alt="Bussiness Process Management System"
+      />
+      <img
+        [ngClass]="{ image_margin: imageId != 2 }"
+        id="2"
+        class="images"
+        src="../../../../assets/images/wizard/DataModel.png"
+        alt="Process Model"
+      />
+      <img
+        id="3"
+        [ngClass]="{ image_margin: imageId != 3 }"
+        class="images"
+        src="../../../../assets/images/wizard/Form.png"
+        alt="Data Model"
+      />
+      <img
+        id="4"
+        [ngClass]="{ image_margin: imageId != 4 }"
+        class="images"
+        src="../../../../assets/images/wizard/Prefrence.png"
+        alt="Form Model"
+      />
+      <img
+        id="5"
+        [ngClass]="{ image_margin: imageId != 5 }"
+        class="images"
+        src="../../../../assets/images/wizard/Rules.png"
+        alt="Bussiness Rules"
+      />
+      <img
+        id="6"
+        [ngClass]="{ image_margin: imageId != 6 }"
+        class="images"
+        src="../../../../assets/images/wizard/Execution.png"
+        alt="Execution"
+      />
+    </figure>
+  </div>
+
+  <nb-card class="wizardControle">
+    <nb-actions size="medium" (click)="nextImage()">
+      <nb-action icon="chevron-right"></nb-action>
+    </nb-actions>
+    <div class="controle-rigth-section">
+      <div class="controle-title">
+        {{ imageId }}.{{ wizardItems[imageId - 1].title }}
+      </div>
+      <p class="detail">{{ wizardItems[imageId - 1].description }}</p>
+    </div>
+    <div class="controle-left-section" [ngSwitch]="imageId">
+      <div *ngSwitchCase="1">
+        <div *ngIf="processService.currentProcess == null; else editProcess">
+          <ngx-controle-item
+            description="فرایند جدید را طراحی کنید"
+            title="فرایند جدید"
+            img="../../../../assets/images/wizard/add-documents.png"
+            (clickButton)="gotoProcess($event)"
+          ></ngx-controle-item>
+          <ngx-controle-item
+            description="فرآیندهای خود را بازیابی کنید"
+            title="وارد كردن فرایند"
+            img="../../../../assets/images/wizard/import.png"
+            (clickButton)="gotoProcessForImport($event)"
+          ></ngx-controle-item>
+        </div>
+        <ng-template #editProcess>
+          <ngx-controle-item
+            description=" .فرایند  قبلا ایجاد شده را ویرایش کنید"
+            title="ویرایش فرایند"
+            img="../../../../assets/images/wizard/edit.png"
+            (clickButton)="gotoProcessForEdit($event)"
+          ></ngx-controle-item>
+        </ng-template>
+      </div>
+      <div *ngSwitchCase="2">
+        <ngx-controle-item
+          description=" مدل داده و روابط بین مدل های داده را ایجاد کنید"
+          title="طراحی مدل"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoDataModelForEdit($event)"
+        ></ngx-controle-item>
+      </div>
+      <div *ngSwitchCase="3">
+        <ngx-controle-item
+          description="رابط کاربری مورد نیاز در فرایند خود را طراحی کنید"
+          title="طراحی رابط کاربری"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoFormModelerEdit($event)"
+        ></ngx-controle-item>
+      </div>
+      <div *ngSwitchCase="4">
+        <ngx-controle-item
+          description="کنترل جریان توالی برای تعیین اینکه کدام فرآیند باید با توجه به شرایط خاص کسب و کار دنبال کند"
+          title="قوانین را تعریف کنید"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoBusinessRule($event)"
+        ></ngx-controle-item>
+        <ngx-controle-item
+          description=""
+          title="قوانین فعالیت راتعریف کنید"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoActivityRuleDesigner($event)"
+        ></ngx-controle-item>
+      </div>
+      <div *ngSwitchCase="5">
+        <ngx-controle-item
+          description="کنترل جریان توالی برای تعیین اینکه کدام فرآیند باید با توجه به شرایط خاص کسب و کار دنبال کند"
+          title="اختصاص دادن مجریان فرایند"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoPerformers($event)"
+        ></ngx-controle-item>
+      </div>
+      <div *ngSwitchCase="6">
+        <ngx-controle-item
+          description=""
+          title="اجرای فرایند به صورت عملیاتی"
+          img="../../../../assets/images/wizard/add-documents.png"
+          (clickButton)="gotoExecution($event)"
+        ></ngx-controle-item>
+      </div>
+    </div>
+    <nb-actions size="medium" (click)="prevImage()">
+      <nb-action icon="chevron-left"></nb-action>
+    </nb-actions>
+  </nb-card>
+</nb-card>
+
+<!-- </div> -->

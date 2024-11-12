@@ -1,0 +1,13 @@
+<div class="form-group">
+  <nb-select
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [selected]="selected?.id"
+    [placeholder]="to.placeholder"
+    fullWidth
+  >
+    <nb-option *ngFor="let option of selectOptions" [value]="option.value">{{
+      option.title
+    }}</nb-option>
+  </nb-select>
+</div>

@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-card-body>
+    <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 4"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded($event)"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      style="width: 40vh; height: 40vh"
+      roundCropper="true"
+    ></image-cropper>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="success" hero (click)="submit()">ثبت</button>
+    <button nbButton status="danger" hero (click)="dismiss()">انصراف</button>
+  </nb-card-footer>
+</nb-card>
